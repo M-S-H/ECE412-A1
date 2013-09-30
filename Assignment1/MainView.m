@@ -21,7 +21,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	NSOpenGLPixelFormatAttribute attributes [] = {
         NSOpenGLPFAWindow,
         NSOpenGLPFADoubleBuffer,	// double buffered
-        NSOpenGLPFADepthSize, (NSOpenGLPixelFormatAttribute)16, // 16 bit depth buffer
+        NSOpenGLPFADepthSize, (NSOpenGLPixelFormatAttribute)16,
         (NSOpenGLPixelFormatAttribute)nil
     };
     
@@ -58,7 +58,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	
-	radians = 0.0174532925 * cam.aperture / 2; // half aperture degrees to radians
+	radians = 0.0174532925 * cam.aperture / 2;
 	wd2 = near * tan(radians);
 	ratio = cam.viewWidth / (float) cam.viewHeight;
 	
@@ -77,9 +77,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 		bottom = -wd2 / ratio;
 	}
 	
-	//NSLog(@"\nl: %f, r: %f, b: %f\nt: %f, n: %f, f: %f", left, right, bottom, top, near, far);
 	glFrustum(left, right, bottom, top, near, far);
-	 
 }
 
 
@@ -90,6 +88,8 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	[self updateModelView];
 	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
+	glPolygonMode(GL_FRONT_AND_BACK, polyMode);
 	
 	[self drawObject]; // draw scene
 	
@@ -152,7 +152,6 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	glEnable(GL_CULL_FACE);
 	glFrontFace(GL_CCW);
 	glPolygonOffset(1.0f, 1.0f);
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	[self resetcam];
@@ -200,6 +199,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 				break;
 			case 'a':
 				cam.pos.x += increment;
+				cam.dir.x -= increment;
 				[self setNeedsDisplay: YES];
 				break;
 			case 'd':
@@ -264,6 +264,42 @@ vec gOrigin = {0.0, 0.0, 0.0};
 
 
 
+- (void) updateMode: (int)tag
+{
+	switch (tag)
+	{
+		case 0:
+			polyMode = GL_FILL;
+			break;
+		case 1:
+			polyMode = GL_LINE;
+			break;
+		case 2:
+			polyMode = GL_POINT;
+			break;
+	}
+	
+	[self setNeedsDisplay: YES];
+}
+
+
+- (void) updateCulling: (int)tag
+{
+	switch (tag)
+	{
+		case 0:
+			cullMode = GL_CW;
+			break;
+		case 1:
+			cullMode = GL_CCW;
+			break;
+	}
+
+	[self setNeedsDisplay: YES];
+}
+
+
+
 - (void) printCamera
 {
 	NSLog(@"posx = %f, posy = %f, posz = %f\ndirx = %f, diry = %f, dirz = %f\n", cam.pos.x, cam.pos.y, cam.pos.z, cam.dir.x, cam.dir.y, cam.dir.z);
@@ -291,12 +327,45 @@ vec gOrigin = {0.0, 0.0, 0.0};
 }
 
 
+- (void) loadModel:(NSString *)s
+{
+	m = [[Model alloc] initWithFile:s];
+	
+	near = (m->maxz - m->minz)*2;
+	far = 4*near;
+	
+	float max = 1;
+	
+	if (m->maxx - m->minx > max)
+		max = m->maxx - m->minx;
+	if (m->maxy - m->miny > max)
+		max = m->maxy - m->miny;
+	if (m->maxz - m->minz >max)
+		max = m->maxz - m->minz;
+	
+	polyMode = GL_FILL;
+	
+	increment = max / 50;
+	
+	if (near < 0.00001)
+		near = 0.00001;
+	
+	if (far < 1.0)
+		far = 1.0;
+	
+	[self resetcam];
+	[con setNearFar:near :far];
+	[self updateProjection];
+	[self setNeedsDisplay: YES];
+}
+
+
 
 - (id) initWithFrame:(NSRect)frameRect
 {
 	NSOpenGLPixelFormat *pf = [MainView basicPixelFormat];
 	
-	m = [[Model alloc] initWithFile:"/Users/Michael/Downloads/3D Models/cube.in"];
+	m = [[Model alloc] init];
 	
 	near = (m->maxz - m->minz)*2;
 	far = 4*near;
@@ -310,6 +379,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	if (m->maxz - m->minz >max)
 		max = m->maxz - m->minz;
 
+	polyMode = GL_FILL;
 	
 	increment = max / 50;
 	

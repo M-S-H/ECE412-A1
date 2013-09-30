@@ -41,7 +41,8 @@ typedef struct {
 	float		minx, miny, minz, maxx, maxy, maxz;
 }
 
-- (id) initWithFile: (char*) file;
+- (id) init;
+- (id) initWithFile: (NSString *) file;
 - (void) determine_bound: (int) i;
 
 @end

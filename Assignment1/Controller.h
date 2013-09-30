@@ -29,8 +29,11 @@
 }
 
 - (IBAction)resetCam:(id)sender;
-- (IBAction)updateColor:(id)sender;
-- (IBAction)updateNearFar:(id)sender;
+- (IBAction)changeColor:(id)sender;
+- (IBAction)changeNearFar:(id)sender;
+- (IBAction)changeMode:(id)sender;
+- (IBAction)changeCull:(id)sender;
+- (IBAction)openModel:(id)sender;
 
 - (void) setNearFar:(float)near :(float)far;
 - (void) updateLabels: (float)posx :(float)posy :(float)posz :(float)dirx :(float) diry :(float)dirz;

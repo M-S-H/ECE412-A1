@@ -46,6 +46,9 @@ typedef struct {
 	float color[3];
 	
 	float increment;
+	
+	GLenum polyMode;
+	GLenum cullMode;
 }
 
 + (NSOpenGLPixelFormat*) basicPixelFormat;
@@ -58,7 +61,10 @@ typedef struct {
 - (void) updateCamera: (float)posx :(float)posy :(float)posz :(float)dirx :(float)diry :(float)dirz;
 - (void) updateColor: (float)red :(float)green :(float)blue;
 - (void) updateNearFar: (float)near :(float)far;
+- (void) updateMode: (int)tag;
+- (void) updateCulling: (int)tag;
 - (void) printCamera;
+- (void) loadModel: (NSString *)s;
 
 - (void) drawRect:(NSRect)bounds;
 - (void) prepareOpenGL;

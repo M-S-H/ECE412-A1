@@ -73,7 +73,7 @@
                             </menuItem>
                             <menuItem title="Open…" keyEquivalent="o" id="72">
                                 <connections>
-                                    <action selector="openDocument:" target="-1" id="374"/>
+                                    <action selector="openModel:" target="xhM-Pa-rNt" id="QWY-f5-LY9"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Recent" id="124">
@@ -675,7 +675,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OD2-pr-JJj">
-                                            <rect key="frame" x="23" y="90" width="38" height="17"/>
+                                            <rect key="frame" x="23" y="95" width="38" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="rsR-67-7BR">
                                                 <font key="font" metaFont="system"/>
@@ -684,7 +684,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K7r-Ze-3Hd">
-                                            <rect key="frame" x="23" y="65" width="38" height="17"/>
+                                            <rect key="frame" x="23" y="70" width="38" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="CFv-jZ-f1a">
                                                 <font key="font" metaFont="system"/>
@@ -693,7 +693,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yBC-4Q-9wh">
-                                            <rect key="frame" x="23" y="41" width="38" height="17"/>
+                                            <rect key="frame" x="23" y="46" width="38" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="HOV-AI-uGq">
                                                 <font key="font" metaFont="system"/>
@@ -702,7 +702,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zE0-o5-dpq">
-                                            <rect key="frame" x="106" y="90" width="38" height="17"/>
+                                            <rect key="frame" x="106" y="95" width="38" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="4Vr-p5-4IH">
                                                 <font key="font" metaFont="system"/>
@@ -711,7 +711,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sjv-lX-H5O">
-                                            <rect key="frame" x="106" y="65" width="38" height="17"/>
+                                            <rect key="frame" x="106" y="70" width="38" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="dlv-bs-E5l">
                                                 <font key="font" metaFont="system"/>
@@ -720,7 +720,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xpu-fD-gGi">
-                                            <rect key="frame" x="106" y="41" width="38" height="17"/>
+                                            <rect key="frame" x="106" y="46" width="38" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="5hw-RB-bKb">
                                                 <font key="font" metaFont="system"/>
@@ -729,14 +729,14 @@
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJq-8v-9Kz">
-                                            <rect key="frame" x="25" y="10" width="117" height="16"/>
+                                            <rect key="frame" x="25" y="15" width="117" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="COh-C1-Owk">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="miniSystem"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="resetCam:" target="xhM-Pa-rNt" id="TW1-xP-PDh"/>
+                                                <action selector="resetCam:" target="xhM-Pa-rNt" id="ptb-kS-mld"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -749,7 +749,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <sliderCell key="cell" continuous="YES" alignment="left" maxValue="255" doubleValue="255" tickMarkPosition="left" sliderType="linear" id="3BC-Fa-1ek"/>
                                 <connections>
-                                    <action selector="updateColor:" target="xhM-Pa-rNt" id="g17-dW-eDa"/>
+                                    <action selector="changeColor:" target="xhM-Pa-rNt" id="0ae-24-WSe"/>
                                 </connections>
                             </slider>
                             <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OyX-kK-oFj">
@@ -757,7 +757,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <sliderCell key="cell" continuous="YES" alignment="left" maxValue="255" doubleValue="255" tickMarkPosition="left" sliderType="linear" id="JC8-LD-mz5"/>
                                 <connections>
-                                    <action selector="updateColor:" target="xhM-Pa-rNt" id="5pO-hC-Jv4"/>
+                                    <action selector="changeColor:" target="xhM-Pa-rNt" id="KxT-SV-w3B"/>
                                 </connections>
                             </slider>
                             <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pls-U7-bRw">
@@ -765,7 +765,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <sliderCell key="cell" continuous="YES" alignment="left" maxValue="255" doubleValue="255" tickMarkPosition="left" sliderType="linear" id="bkL-vH-5y6"/>
                                 <connections>
-                                    <action selector="updateColor:" target="xhM-Pa-rNt" id="clZ-XO-sXi"/>
+                                    <action selector="changeColor:" target="xhM-Pa-rNt" id="qPQ-xP-Un4"/>
                                 </connections>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVs-bD-kP3">
@@ -804,7 +804,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="updateNearFar:" target="xhM-Pa-rNt" id="kqR-5o-ALX"/>
+                                    <action selector="changeNearFar:" target="xhM-Pa-rNt" id="gck-wa-fRp"/>
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6T-TN-PeM">
@@ -816,7 +816,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="updateNearFar:" target="xhM-Pa-rNt" id="f06-Du-KeO"/>
+                                    <action selector="changeNearFar:" target="xhM-Pa-rNt" id="4Sy-Y4-CbE"/>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWO-Lg-qEu">
@@ -838,7 +838,7 @@
                                 </textFieldCell>
                             </textField>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tq1-BO-Cjf">
-                                <rect key="frame" x="528" y="104" width="98" height="38"/>
+                                <rect key="frame" x="528" y="84" width="86" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="86" height="18"/>
@@ -849,19 +849,32 @@
                                 </buttonCell>
                                 <cells>
                                     <column>
-                                        <buttonCell type="radio" title="Wireframe" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="D2B-wu-JVF">
+                                        <buttonCell type="radio" title="Solid" imagePosition="left" alignment="left" state="on" inset="2" id="D2B-wu-JVF">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <action selector="changeMode:" target="xhM-Pa-rNt" id="cIU-8w-eMZ"/>
+                                            </connections>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="Solid" imagePosition="left" alignment="left" inset="2" id="tIR-Rt-Pbr">
+                                        <buttonCell type="radio" title="Wireframe" imagePosition="left" alignment="left" tag="1" inset="2" id="tIR-Rt-Pbr">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <action selector="changeMode:" target="xhM-Pa-rNt" id="CRa-Yn-1tn"/>
+                                            </connections>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="Points" imagePosition="left" alignment="left" tag="2" inset="2" id="Eic-p2-dhs">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <action selector="changeMode:" target="xhM-Pa-rNt" id="AQN-fo-fVA"/>
+                                            </connections>
                                         </buttonCell>
                                     </column>
                                 </cells>
                             </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="agj-42-BUY">
-                                <rect key="frame" x="528" y="35" width="98" height="38"/>
+                                <rect key="frame" x="528" y="26" width="98" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="51" height="18"/>
@@ -872,13 +885,19 @@
                                 </buttonCell>
                                 <cells>
                                     <column>
-                                        <buttonCell type="radio" title="CW" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="VmJ-yX-q1L">
+                                        <buttonCell type="radio" title="CW" imagePosition="left" alignment="left" state="on" inset="2" id="VmJ-yX-q1L">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <action selector="changeCull:" target="xhM-Pa-rNt" id="8fF-vQ-v3h"/>
+                                            </connections>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="CCW" imagePosition="left" alignment="left" inset="2" id="Bhd-oo-J6l">
+                                        <buttonCell type="radio" title="CCW" imagePosition="left" alignment="left" tag="1" inset="2" id="Bhd-oo-J6l">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <action selector="changeCull:" target="xhM-Pa-rNt" id="oDs-h1-kT6"/>
+                                            </connections>
                                         </buttonCell>
                                     </column>
                                 </cells>

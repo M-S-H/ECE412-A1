@@ -14,11 +14,33 @@
 - (id) init
 {
 	self = [super init];
+	
+	tri_num = 1;
+	tri = (triangle *) malloc(sizeof(triangle));
+	
+	tri[0].vertex[0].x = 0;
+	tri[0].vertex[0].y = 0;
+	tri[0].vertex[0].z = 0;
+	
+	tri[0].vertex[1].x = 0;
+	tri[0].vertex[1].y = 0;
+	tri[0].vertex[1].z = 0;
+	
+	tri[0].vertex[2].x = 0;
+	tri[0].vertex[2].y = 0;
+	tri[0].vertex[2].z = 0;
+	
+	maxx = 1;
+	minx = -1;
+	maxy = 1;
+	
+	miny = maxz = minz = 0;
+	
 	return self;
 }
 
 
-- (id) initWithFile:(char*) file
+- (id) initWithFile:(NSString*) file
 {
 	minx = miny = minz = maxx = maxy = maxz = 0;
 	
@@ -26,7 +48,8 @@
 	if (self)
 	{
 		FILE *fp;
-		fp = fopen(file, "r");
+		const char *path = [file UTF8String];
+		fp = fopen(path, "r");
 		
 		if (fp == NULL)
 		{
