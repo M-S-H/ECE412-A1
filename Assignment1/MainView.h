@@ -49,6 +49,8 @@ typedef struct {
 	
 	GLenum polyMode;
 	GLenum cullMode;
+	
+	NSPoint start;
 }
 
 + (NSOpenGLPixelFormat*) basicPixelFormat;
@@ -71,6 +73,9 @@ typedef struct {
 - (void) update;
 
 - (void) keyDown:(NSEvent *)theEvent;
+- (void) mouseDown: (NSEvent *)theEvent;
+- (void) mouseDragged:(NSEvent *)theEvent;
+- (void) mouseUp:(NSEvent *)theEvent;
 
 - (BOOL) acceptsFirstResponder;
 - (BOOL) becomeFirstResponder;

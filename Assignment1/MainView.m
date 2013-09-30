@@ -42,7 +42,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 			glVertex3f(m->tri[i].vertex[j].x, m->tri[i].vertex[j].y, m->tri[i].vertex[j].z);
 		}
 	}
-	glEnd();
+	glEnd();	
 }
 
 
@@ -90,6 +90,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	glPolygonMode(GL_FRONT_AND_BACK, polyMode);
+	glFrontFace(cullMode);
 	
 	[self drawObject]; // draw scene
 	
@@ -126,7 +127,6 @@ vec gOrigin = {0.0, 0.0, 0.0};
 {
 	NSRect rectView = [self bounds];
 	
-	//ensure cam knows size changed
 	if ((cam.viewHeight != rectView.size.height) || (cam.viewWidth != rectView.size.width))
 	{
 		cam.viewHeight = rectView.size.height;
@@ -147,10 +147,11 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	
 	//init GL stuff
 	glEnable(GL_DEPTH_TEST);
+	cullMode = GL_CW;
 	
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_CULL_FACE);
-	glFrontFace(GL_CCW);
+	glFrontFace(cullMode);
 	glPolygonOffset(1.0f, 1.0f);
 	
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -172,7 +173,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	
 	cam.dir.x = 0;
 	cam.dir.y = 0;
-	cam.dir.z = -cam.pos.z;
+	cam.dir.z = -cos(cam.rot.y);
 	
 	cam.up.x = 0;
 	cam.up.y = 1;
@@ -189,41 +190,70 @@ vec gOrigin = {0.0, 0.0, 0.0};
     if ([characters length]) {
         unichar character = [characters characterAtIndex:0];
 		switch (character) {
+			
 			case 'w':
-				cam.pos.z += increment;
+				cam.pos.x += cam.dir.x * increment;
+				cam.pos.y += cam.dir.y * increment;
+				cam.pos.z += cam.dir.z * increment;
 				[self setNeedsDisplay: YES];
 				break;
 			case 's':
-				cam.pos.z -= increment;
-				[self setNeedsDisplay: YES];
-				break;
-			case 'a':
-				cam.pos.x += increment;
-				cam.dir.x -= increment;
-				[self setNeedsDisplay: YES];
-				break;
-			case 'd':
-				cam.pos.x -= increment;
+				cam.pos.x -= cam.dir.x * increment;
+				cam.pos.y -= cam.dir.y * increment;
+				cam.pos.z -= cam.dir.z * increment;
 				[self setNeedsDisplay: YES];
 				break;
 			case 'j':
-				cam.dir.x += increment;
+				cam.rot.y -= 0.01;
+				cam.dir.x = sin(cam.rot.y);
+				cam.dir.z = -cos(cam.rot.y);
 				[self setNeedsDisplay: YES];
 				break;
 			case 'l':
-				cam.dir.x -= increment;
+				cam.rot.y += 0.01;
+				cam.dir.x = sin(cam.rot.y);
+				cam.dir.z = -cos(cam.rot.y);
 				[self setNeedsDisplay: YES];
 				break;
-			case 'i':
-				cam.dir.y += increment;
+			case 'd':
+				cam.pos.z += sin(cam.rot.y) * increment;
+				cam.pos.x -= -cos(cam.rot.y) * increment;
 				[self setNeedsDisplay: YES];
 				break;
-			case 'k':
-				cam.dir.y -= increment;
+			case 'a':
+				cam.pos.z -= sin(cam.rot.y) * increment;
+				cam.pos.x += -cos(cam.rot.y) * increment;
 				[self setNeedsDisplay: YES];
 				break;
 		}
 	}
+}
+
+
+
+- (void) mouseDown: (NSEvent*) theEvent
+{
+	start = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+}
+
+- (void) mouseDragged: (NSEvent *) theEvent
+{
+	NSPoint current = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+	
+	
+	cam.rot.y += (start.x - current.x) * 0.01;
+	cam.dir.x = sin(cam.rot.y);
+	cam.dir.z = -cos(cam.rot.y);
+	
+	[self setNeedsDisplay: YES];
+	
+	start = current;
+}
+
+
+- (void) mouseUp: (NSEvent *) theEvent
+{
+	
 }
 
 
@@ -334,6 +364,8 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	near = (m->maxz - m->minz)*2;
 	far = 4*near;
 	
+	cam.rot.y = 0;
+	
 	float max = 1;
 	
 	if (m->maxx - m->minx > max)
@@ -369,6 +401,8 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	
 	near = (m->maxz - m->minz)*2;
 	far = 4*near;
+	
+	cam.rot.y = 0;
 	
 	float max = 1;
 	
