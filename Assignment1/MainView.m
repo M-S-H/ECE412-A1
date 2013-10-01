@@ -20,7 +20,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 {
 	NSOpenGLPixelFormatAttribute attributes [] = {
         NSOpenGLPFAWindow,
-        NSOpenGLPFADoubleBuffer,	// double buffered
+        NSOpenGLPFADoubleBuffer,
         NSOpenGLPFADepthSize, (NSOpenGLPixelFormatAttribute)16,
         (NSOpenGLPixelFormatAttribute)nil
     };
@@ -42,7 +42,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 			glVertex3f(m->tri[i].vertex[j].x, m->tri[i].vertex[j].y, m->tri[i].vertex[j].z);
 		}
 	}
-	glEnd();	
+	glEnd();
 }
 
 
@@ -54,7 +54,6 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	
 	[[self openGLContext] makeCurrentContext];
 	
-	//set projection
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	
@@ -92,7 +91,7 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	glPolygonMode(GL_FRONT_AND_BACK, polyMode);
 	glFrontFace(cullMode);
 	
-	[self drawObject]; // draw scene
+	[self drawObject];
 	
 	if ([self inLiveResize])
 		glFlush ();
@@ -145,7 +144,6 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	
 	[[self openGLContext] setValues:&swapInt forParameter:NSOpenGLCPSwapInterval]; //set to vbl sync
 	
-	//init GL stuff
 	glEnable(GL_DEPTH_TEST);
 	cullMode = GL_CW;
 	
@@ -277,7 +275,6 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	color[1] = green/255;
 	color[2] = blue/255;
 	
-	//NSLog(@"color updated: %f\n", color[0]);
 	[self setNeedsDisplay: YES];
 }
 
@@ -288,6 +285,8 @@ vec gOrigin = {0.0, 0.0, 0.0};
 	near = n;
 	far = f;
 
+	NSLog(@"near = %f\nfar = %f\n\n", n, f);
+	
 	[self updateProjection];
 	[self setNeedsDisplay: YES];
 }

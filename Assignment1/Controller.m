@@ -49,6 +49,7 @@
 
 - (void) setNearFar:(float)n :(float)f
 {
+	NSLog(@"set near = %f\nset far = %f\n\n", n, f);
 	[near setIntegerValue: n];
 	[far setIntegerValue: f];
 }

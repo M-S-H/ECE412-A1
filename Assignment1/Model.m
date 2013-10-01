@@ -111,8 +111,6 @@
 			tri[i].color[2] = 255 * mat[color_index[0]].colord[2];
 		}
 		
-		NSLog(@"\nmaxx = %f, maxy = %f, maxz = %f\nminx = %f, miny = %f, minz = %f\n", maxx, maxy, maxz, minx, miny, minz);
-		
 		fclose(fp);
 	}
 	

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1080" identifier="macosx"/>
+        <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
     </dependencies>
     <objects>
@@ -747,7 +747,7 @@
                             <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KNK-aX-xhb">
                                 <rect key="frame" x="404" y="48" width="21" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="255" doubleValue="255" tickMarkPosition="left" sliderType="linear" id="3BC-Fa-1ek"/>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="255" doubleValue="255" tickMarkPosition="right" sliderType="linear" id="3BC-Fa-1ek"/>
                                 <connections>
                                     <action selector="changeColor:" target="xhM-Pa-rNt" id="0ae-24-WSe"/>
                                 </connections>
@@ -755,7 +755,7 @@
                             <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OyX-kK-oFj">
                                 <rect key="frame" x="429" y="48" width="21" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="255" doubleValue="255" tickMarkPosition="left" sliderType="linear" id="JC8-LD-mz5"/>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="255" doubleValue="255" tickMarkPosition="right" sliderType="linear" id="JC8-LD-mz5"/>
                                 <connections>
                                     <action selector="changeColor:" target="xhM-Pa-rNt" id="KxT-SV-w3B"/>
                                 </connections>
@@ -763,7 +763,7 @@
                             <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pls-U7-bRw">
                                 <rect key="frame" x="379" y="48" width="21" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="255" doubleValue="255" tickMarkPosition="left" sliderType="linear" id="bkL-vH-5y6"/>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="255" doubleValue="255" tickMarkPosition="right" sliderType="linear" id="bkL-vH-5y6"/>
                                 <connections>
                                     <action selector="changeColor:" target="xhM-Pa-rNt" id="qPQ-xP-Un4"/>
                                 </connections>
@@ -794,30 +794,6 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yoK-Ub-Jv1">
-                                <rect key="frame" x="208" y="95" width="130" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="GT1-Cz-RHL">
-                                    <font key="font" size="11" name="LucidaGrande"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="changeNearFar:" target="xhM-Pa-rNt" id="gck-wa-fRp"/>
-                                </connections>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6T-TN-PeM">
-                                <rect key="frame" x="208" y="35" width="130" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="13k-Jt-Rk4">
-                                    <font key="font" size="11" name="LucidaGrande"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="changeNearFar:" target="xhM-Pa-rNt" id="4Sy-Y4-CbE"/>
-                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWO-Lg-qEu">
                                 <rect key="frame" x="205" y="125" width="38" height="17"/>
@@ -902,6 +878,42 @@
                                     </column>
                                 </cells>
                             </matrix>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ypf-MG-iZu">
+                                <rect key="frame" x="208" y="95" width="120" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="SVu-zp-lFV">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" minimumFractionDigits="0" maximumFractionDigits="3" id="0MP-BZ-dOb">
+                                        <real key="roundingIncrement" value="0.0"/>
+                                        <metadata>
+                                            <bool key="localizesFormat" value="YES"/>
+                                        </metadata>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="changeNearFar:" target="xhM-Pa-rNt" id="s28-iv-caA"/>
+                                </connections>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQr-6w-KDt">
+                                <rect key="frame" x="208" y="35" width="120" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="KSZ-s7-Dp4">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" minimumFractionDigits="0" maximumFractionDigits="3" id="ScB-3v-VMf">
+                                        <real key="roundingIncrement" value="0.0"/>
+                                        <metadata>
+                                            <bool key="localizesFormat" value="YES"/>
+                                        </metadata>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="changeNearFar:" target="xhM-Pa-rNt" id="CBo-tQ-I4W"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <connections>
                             <outlet property="OpenGLView" destination="dRr-MQ-Baw" id="ipL-xf-u7h"/>
@@ -928,9 +940,9 @@
                 <outlet property="dirx" destination="zE0-o5-dpq" id="sN4-Xg-VgA"/>
                 <outlet property="diry" destination="Sjv-lX-H5O" id="F3T-8F-6qs"/>
                 <outlet property="dirz" destination="Xpu-fD-gGi" id="ysz-Yc-SjU"/>
-                <outlet property="far" destination="a6T-TN-PeM" id="FSj-ur-kY8"/>
+                <outlet property="far" destination="nQr-6w-KDt" id="q5E-if-z9c"/>
                 <outlet property="green" destination="KNK-aX-xhb" id="gBM-3F-ef2"/>
-                <outlet property="near" destination="yoK-Ub-Jv1" id="oMD-er-UFH"/>
+                <outlet property="near" destination="ypf-MG-iZu" id="VQ7-pF-Twi"/>
                 <outlet property="posx" destination="OD2-pr-JJj" id="ghi-H1-qml"/>
                 <outlet property="posy" destination="K7r-Ze-3Hd" id="A78-sc-M9l"/>
                 <outlet property="posz" destination="yBC-4Q-9wh" id="ef5-X5-8za"/>
